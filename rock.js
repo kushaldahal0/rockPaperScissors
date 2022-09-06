@@ -54,9 +54,9 @@ let play = (compSelect, playerSelect) => {
     : (compSelect == array[1] && playerSelect == array[2]) ? win(2,1)
     : (compSelect == array[2] && playerSelect == array[0]) ? win(0,2)
     //lose situations ------>loose(ps, cs)
-    : (compSelect == array[1] && playerSelect == array[0]) ? loose(0,1)
-    : (compSelect == array[2] && playerSelect == array[1]) ? loose(1,2)
-    : (compSelect == array[0] && playerSelect == array[2]) ? loose(2,0)
+    : (compSelect == array[1] && playerSelect == array[0]) ? loose(1,0)
+    : (compSelect == array[2] && playerSelect == array[1]) ? loose(2,1)
+    : (compSelect == array[0] && playerSelect == array[2]) ? loose(0,2)
     : console.log("dont know what happened here")
 };
 
@@ -65,7 +65,7 @@ let game = () =>{
 
     let i = 0;
     while(i < 5){
-        play(getComputerChoice(), "ROCK");
+        play(getComputerChoice(), "PAPER");
         console.log(`wins = ${winCount} , loses = ${loseCount} , draw = ${drawCount}`)
         console.log("\n\n") 
         i++;
