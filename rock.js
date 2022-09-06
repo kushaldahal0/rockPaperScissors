@@ -9,22 +9,20 @@ let getComputerChoice = () =>{
 
 
 
+let getPlayerChoice = () =>{
+    let choice = String;
+    do{
+        choice = prompt("Enter your choice");
+        (choice =="")?    console.log("value not given")
+        
+        :(choice == null)? exit()
+        :choice = choice.toUpperCase();
+        choice = choice.trim();  
+    } while((choice != array[0]) && (choice != array[1]) && (choice != array[2]));
+    return choice;
+};
 
-// let getPlayerChoice = () =>{
-//     let choice = "";
-//     do{
-//         choice = prompt("Enter your choice");
-//         if(choice == null) {
-//             console.log("value not given")
-//             return(0)
-//         }
-//         choice = choice.toUpperCase();
-//         choice = choice.trim();
-//     } while((choice != array[0]) || (choice != array[1]) || (choice != array[2]));
-//     return choice;
-// };
 
-// console.log(`players choice => ${getPlayerChoice()}`);
 
 let winCount = 0;
 let loseCount = 0;
@@ -47,7 +45,7 @@ let draw = () =>{
 
 // array = ["ROCK","PAPER","SCISSORS"] rock = 0, paper = 1, scissors = 2;
 let play = (compSelect, playerSelect) => {
-    console.log(`players choice => ${playerSelect}(example),                computers choice => ${compSelect}`);
+    console.log(`players choice => ${playerSelect},                computers choice => ${compSelect}`);
     (compSelect === playerSelect) ? draw()
     //win situations ------>win(ps, cs)
     : (compSelect == array[0] && playerSelect == array[1]) ? win(1,0)
@@ -65,7 +63,7 @@ let game = () =>{
 
     let i = 0;
     while(i < 5){
-        play(getComputerChoice(), "PAPER");
+        play(getComputerChoice(), getPlayerChoice());
         console.log(`wins = ${winCount} , loses = ${loseCount} , draw = ${drawCount}`)
         console.log("\n\n") 
         i++;
