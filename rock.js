@@ -1,4 +1,5 @@
 console.log("WELCOME TO ROCK PAPERS AND SCISSORS!!!");
+console.log("Best of 5!!")
 
 let array = ["ROCK","PAPER","SCISSORS"];
 let getComputerChoice = () =>{
@@ -8,21 +9,23 @@ let getComputerChoice = () =>{
 
 
 
-let compSelect = getComputerChoice();
-console.log(`computers choice => ${compSelect}`);
 
 // let getPlayerChoice = () =>{
-//     let choice = prompt("Enter your choice");
-//     choice = choice.toUpperCase();
-//     choice = choice.trim();
+//     let choice = "";
+//     do{
+//         choice = prompt("Enter your choice");
+//         if(choice == null) {
+//             console.log("value not given")
+//             return(0)
+//         }
+//         choice = choice.toUpperCase();
+//         choice = choice.trim();
+//     } while((choice != array[0]) || (choice != array[1]) || (choice != array[2]));
 //     return choice;
 // };
 
-// let playerSelect = getPlayerChoice();
-// console.log(`players choice => ${playerSelect}`);
+// console.log(`players choice => ${getPlayerChoice()}`);
 
-let playerSelect = "ROCK";
-console.log(`players choice => ${playerSelect}(example)`)
 let winCount = 0;
 let loseCount = 0;
 let drawCount = 0;
@@ -32,7 +35,7 @@ let win = (a,b) => {
     winCount ++;
 }
 let loose = (a,b) => {
-    console.log(`You Lose! ${array[1]} beats ${array[0]}`);
+    console.log(`You Lose! ${array[a]} beats ${array[b]}`);
     loseCount ++;
 }
 
@@ -42,8 +45,9 @@ let draw = () =>{
 }
 
 
-
+// array = ["ROCK","PAPER","SCISSORS"] rock = 0, paper = 1, scissors = 2;
 let play = (compSelect, playerSelect) => {
+    console.log(`players choice => ${playerSelect}(example),                computers choice => ${compSelect}`);
     (compSelect === playerSelect) ? draw()
     //win situations ------>win(ps, cs)
     : (compSelect == array[0] && playerSelect == array[1]) ? win(1,0)
@@ -56,5 +60,15 @@ let play = (compSelect, playerSelect) => {
     : console.log("dont know what happened here")
 };
 
-play(compSelect, playerSelect);
-console.log(`wins = ${winCount} , loses = ${loseCount} , draw = ${drawCount}`)
+
+let game = () =>{
+
+    let i = 0;
+    while(i < 5){
+        play(getComputerChoice(), "ROCK");
+        console.log(`wins = ${winCount} , loses = ${loseCount} , draw = ${drawCount}`)
+        console.log("\n\n") 
+        i++;
+    }
+}
+game()
