@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RockPapers</title>
+    <script src="rockui.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1>Rock Paper Scissors</h1>
+   <div class="start">
+        <h3>press start to continue</h3>
+        <button onclick="start()">Start</button>
+        <h3><div class ="prev_score"></div></h3>
+   </div>
+
+
+   <div class="container">
+        <div class="score">
+             <h2>Score : </h2><h3>
+            <div class="scoreholder"></div></h3>
+        </div>
+        <div class="title">
+            <h3>Select Your Choice</h3>
+        </div>
+        <div class="cards">
+            <div class="select card" data-index = '0' id="rock" >
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMjMzLjcyIDM3NC42MyAzNS45MDYtMzAuODg3IDEzLjI3My0zMS4zOTEgMTA3LjYxLTQwLjg0IDM4LjY1MiAzOS44MjQtNDguNDE4IDI2Ljg2My00Ny4zNTkgOS4zODI4IDUyLjA5NC0xLjUwMzkgNjAuMDU5LTIyLjQ1NyAzMi4zOTUtMC4wNTg1OTQgMjQuNjY4IDI2Ljg5NS03Ljk0MTQgMTkuMDUxIDUuNDYwOSAxNy44MDUgMTguMTc2IDIzLjY4LTYuNzI2NiAzOC4xMTMtNTguMzAxIDIyLjQxLTc2LjIwNyA4Ljk2ODgtNi41MTE3LTEzLjAyNyAyOS4xMzctMTQuNzczIDQ3LjM1OS0xNS4xMjEtNDIuNjIxIDQuNzM4My00Ny4zNTkgMTguOTQxLTg5Ljg0OC01LjQxOC02LjczMDUtNDQuODMyeiIvPgo8L3N2Zz4K" alt="Rock" srcset="">
+                <p>ROCKS</p>
+            </div>
+        
+            <div class="select card" data-index='1' id="pap" >
+                <img src="https://icon-library.com/images/piece-of-paper-icon/piece-of-paper-icon-12.jpg" alt="Papers" srcset="">
+                <p>PAPERS</p>
+            </div>
+
+            <div class="select card" data-index='2' id="scis" >
+                <img src="https://cdn-icons-png.flaticon.com/512/3460/3460589.png" alt="Scissors" srcset="">
+                <p>SCISSORS</p>
+            </div>
+        </div>
+   </div>
+   <div class="resultcard">
+        <div class="score">
+        <h2>Score : </h2>
+        <h3><div class="scoreholder"></div></h3>
+        </div>
+        <div class="choiceContainer">
+            <div class="compchoice">
+                <h2>&emsp;Computer's Choice was: </h2>
+                <div class="card" id="comp"></div>
+            </div>
+            <div class="playerchoice">
+                <h2>&emsp;Your Choice was: </h2>
+                <div class="card" id="player"></div>
+            </div>
+        </div>
+
+        <h2><div class="state"></div></h2>
+        <div class="btns">
+            <button onclick="continuebtn()">Continue</button>
+            <button class="cancel" onclick="cancel()">Cancel</button>
+        </div>   
+    </div>
+</body>
+</html>
